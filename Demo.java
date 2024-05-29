@@ -9,11 +9,12 @@ public class Demo {
         System.out.print("Are you a lion or a cat? (Please enter your answer in all lowercase): ");
         felineInput = input.nextLine();
 
-        while (!(felineInput == "lion" || felineInput == "cat")) {
+        while (!(felineInput.equals("lion")) && !(felineInput.equals("cat"))) {
             System.out.print("Please enter either lion or cat in all lowercase: ");
+            felineInput = input.nextLine();
         }
 
-        if (felineInput == "lion") {
+        if (felineInput.equals("lion")) {
             feline = new Lion();
         } else {
             feline = new Cat();
@@ -21,5 +22,7 @@ public class Demo {
 
         System.out.print("You say ");
         feline.makeSound();
+
+        input.close();
     }
 }
